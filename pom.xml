@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.ricochetrobot_botuli_niane_valery/com.example.ricochetrobot_botuli_niane_valery.HelloApplication
+                                com.isep.ricochetrobot_botuli_niane_valery/com.MainApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
