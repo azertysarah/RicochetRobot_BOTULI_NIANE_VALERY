@@ -1,10 +1,14 @@
 package com;
 
+import com.isep.HorizontalWall;
+import com.isep.VerticalWall;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+
+import java.util.List;
 
 public class MainController {
     public final int CELL_SIZE = 40;
@@ -35,6 +39,38 @@ public class MainController {
             }
         }
 
-        //Créer les murs
+        //Créer les murs (en fonction des planches versos 1, 2, 3 et 4 du document)
+        //Murs horizontaux
+        Image horizontalWallUpImage = new Image("HorizontalWallUp.png", CELL_SIZE, CELL_SIZE, false, true);
+        Image horizontalWallDownImage = new Image("HorizontalWallDown.png", CELL_SIZE, CELL_SIZE, false, true);
+
+        List<HorizontalWall> listOfHorizontalWalls = HorizontalWall.createHorizontalWalls();
+
+        for (HorizontalWall horizontalWall : listOfHorizontalWalls){
+            ImageView horizontalWallUpImageView = new ImageView(horizontalWallUpImage);
+            ImageView horizontalWallDownImageView = new ImageView(horizontalWallDownImage);
+            if(horizontalWall.isUp() == true){
+                gridBoard.add(horizontalWallUpImageView,horizontalWall.getRow(),horizontalWall.getColumn());
+            }else{
+                gridBoard.add(horizontalWallDownImageView,horizontalWall.getRow(),horizontalWall.getColumn());
+            }
+        }
+        //Murs verticaux
+        Image verticalWallLeftImage = new Image("VerticalWallLeft.png", CELL_SIZE, CELL_SIZE, false, true);
+        Image verticalWallRightImage = new Image("VerticalWallRight.png", CELL_SIZE, CELL_SIZE, false, true);
+
+        List<VerticalWall> listOfVerticalWalls = VerticalWall.createVerticalWalls();
+
+        for (VerticalWall verticalWall : listOfVerticalWalls){
+            ImageView verticalWallLeftImageView = new ImageView(verticalWallLeftImage);
+            ImageView verticalWallRightImageView = new ImageView(verticalWallRightImage);
+            if(verticalWall.isLeft() == true){
+                gridBoard.add(verticalWallLeftImageView,verticalWall.getRow(),verticalWall.getColumn());
+            }else{
+                gridBoard.add(verticalWallRightImageView,verticalWall.getRow(),verticalWall.getColumn());
+            }
+        }
+        //Créer et placer les objectifs
+        //Créer et placer les robots de manière aléatoire sur le plateau
     }
 }
