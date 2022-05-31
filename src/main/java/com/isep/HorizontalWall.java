@@ -31,6 +31,26 @@ public class HorizontalWall {
         listOfHorizontalWalls.add(new HorizontalWall(9, 8, true));
 
         //Autres murs
+        listOfHorizontalWalls.add(new HorizontalWall(2, 6, true));
+        listOfHorizontalWalls.add(new HorizontalWall(2, 10, true));
+        listOfHorizontalWalls.add(new HorizontalWall(3, 5, true));
+        listOfHorizontalWalls.add(new HorizontalWall(3, 12, true));
+        listOfHorizontalWalls.add(new HorizontalWall(5, 15, true));
+        listOfHorizontalWalls.add(new HorizontalWall(6, 1, true));
+        listOfHorizontalWalls.add(new HorizontalWall(6, 8, true));
+        listOfHorizontalWalls.add(new HorizontalWall(6, 13, true));
+        listOfHorizontalWalls.add(new HorizontalWall(7, 0, true));
+        listOfHorizontalWalls.add(new HorizontalWall(7, 4, true));
+        listOfHorizontalWalls.add(new HorizontalWall(10, 10, true));
+        listOfHorizontalWalls.add(new HorizontalWall(11, 1, true));
+        listOfHorizontalWalls.add(new HorizontalWall(11, 5, true));
+        listOfHorizontalWalls.add(new HorizontalWall(11, 12, true));
+        listOfHorizontalWalls.add(new HorizontalWall(12, 6, true));
+        listOfHorizontalWalls.add(new HorizontalWall(12, 13, true));
+        listOfHorizontalWalls.add(new HorizontalWall(13, 9, true));
+        listOfHorizontalWalls.add(new HorizontalWall(13, 15, true));
+        listOfHorizontalWalls.add(new HorizontalWall(14, 0, true));
+        listOfHorizontalWalls.add(new HorizontalWall(15, 3, true));
 
         return listOfHorizontalWalls;
     }

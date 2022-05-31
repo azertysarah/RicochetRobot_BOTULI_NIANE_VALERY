@@ -18,6 +18,7 @@ public class VerticalWall {
     //Méthode pour lister tous les murs horizontaux du plateau de jeu
     public static List<VerticalWall> createVerticalWalls() {
         List<VerticalWall> listOfVerticalWall = new ArrayList<>();
+
         //Bordure du plateau
         for (int column = 0; column < 16; column++) {
             listOfVerticalWall.add(new VerticalWall(column, 0, true));
@@ -31,6 +32,25 @@ public class VerticalWall {
         listOfVerticalWall.add(new VerticalWall(8, 9, true));
 
         //Autres murs
+        listOfVerticalWall.add(new VerticalWall(0, 3, true));
+        listOfVerticalWall.add(new VerticalWall(0, 9, true));
+        listOfVerticalWall.add(new VerticalWall(1, 10, true));
+        listOfVerticalWall.add(new VerticalWall(2, 6, true));
+        listOfVerticalWall.add(new VerticalWall(2, 13, true));
+        listOfVerticalWall.add(new VerticalWall(3, 12, true));
+        listOfVerticalWall.add(new VerticalWall(5, 1, true));
+        listOfVerticalWall.add(new VerticalWall(5, 8, true));
+        listOfVerticalWall.add(new VerticalWall(6, 14, true));
+        listOfVerticalWall.add(new VerticalWall(7, 5, true));
+        listOfVerticalWall.add(new VerticalWall(9, 11, true));
+        listOfVerticalWall.add(new VerticalWall(10, 5, true));
+        listOfVerticalWall.add(new VerticalWall(11, 1, true));
+        listOfVerticalWall.add(new VerticalWall(11, 13, true));
+        listOfVerticalWall.add(new VerticalWall(12, 7, true));
+        listOfVerticalWall.add(new VerticalWall(13, 9, true));
+        listOfVerticalWall.add(new VerticalWall(14, 4, true));
+        listOfVerticalWall.add(new VerticalWall(15, 6, true));
+        listOfVerticalWall.add(new VerticalWall(15, 11, true));
 
         return listOfVerticalWall;
     }
