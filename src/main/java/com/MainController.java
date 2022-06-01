@@ -1,5 +1,6 @@
 package com;
 
+import com.isep.Goal;
 import com.isep.HorizontalWall;
 import com.isep.VerticalWall;
 import javafx.fxml.FXML;
@@ -70,7 +71,36 @@ public class MainController {
                 gridBoard.add(verticalWallRightImageView,verticalWall.getRow(),verticalWall.getColumn());
             }
         }
+
         //Créer et placer les objectifs
+        Image redGoalImage = new Image("RedGoal.png", CELL_SIZE, CELL_SIZE, false, true);
+        Image greenGoalImage = new Image("GreenGoal.png", CELL_SIZE, CELL_SIZE, false, true);
+        Image blueGoalImage = new Image("BlueGoal.png", CELL_SIZE, CELL_SIZE, false, true);
+        Image yellowGoalImage = new Image("YellowGoal.png", CELL_SIZE, CELL_SIZE, false, true);
+
+        List<Goal> listOfGoals = Goal.createGoals();
+
+        for (Goal goal : listOfGoals){
+            ImageView redGoalImageView = new ImageView(redGoalImage);
+            ImageView greenGoalImageView = new ImageView(greenGoalImage);
+            ImageView blueGoalImageView = new ImageView(blueGoalImage);
+            ImageView yellowGoalImageView = new ImageView(yellowGoalImage);
+            switch(goal.getColor()){
+                case "RED":
+                    gridBoard.add(redGoalImageView,goal.getRow(),goal.getColumn());
+                    break;
+                case "GREEN":
+                    gridBoard.add(greenGoalImageView,goal.getRow(),goal.getColumn());
+                    break;
+                case "BLUE":
+                    gridBoard.add(blueGoalImageView,goal.getRow(),goal.getColumn());
+                    break;
+                case "YELLOW":
+                    gridBoard.add(yellowGoalImageView,goal.getRow(),goal.getColumn());
+                    break;
+            }
+        }
+
         //Créer et placer les robots de manière aléatoire sur le plateau
     }
 }
