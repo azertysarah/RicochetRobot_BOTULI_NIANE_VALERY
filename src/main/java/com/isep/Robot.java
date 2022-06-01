@@ -16,14 +16,17 @@ public class Robot {
         this.color = color;
     }
 
+    //POSITION INITIALE
     public static List<Robot> createRobots() {
         //Création d'une liste vide pour les robots
         List<Robot> listOfRobots = new ArrayList<>();
 
         //On génère des nombres aléatoirement pour les positions aléatoires initiales des robots
         Random random = new Random();
+
         int randomColumn1; int randomColumn2; int randomColumn3; int randomColumn4;
         int randomRow1; int randomRow2; int randomRow3; int randomRow4;
+
         do {
             randomColumn1 = random.nextInt(16);
             randomColumn2 = random.nextInt(16);
@@ -47,6 +50,11 @@ public class Robot {
         listOfRobots.add(new Robot(randomColumn4, randomRow4, "YELLOW"));
 
         return listOfRobots;
+    }
+
+    //DÉPLACEMENT
+    public void moveRobot(){
+
     }
 
     //Getters
