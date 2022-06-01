@@ -23,7 +23,7 @@ public class MainController {
 
     public void playGame() throws Exception{
 
-        //Afficher les cases du plateau dans chaque cellule de la grille
+        //CASES: Afficher les cases du plateau dans chaque cellule de la grille
         Image cellImage = new Image("Cell.png", CELL_SIZE, CELL_SIZE, false, true);             //Case du plateau
         Image emptyCellImage = new Image("EmptyCell.png", CELL_SIZE, CELL_SIZE, false, true);   //Case du milieu
 
@@ -41,7 +41,7 @@ public class MainController {
             }
         }
 
-        //Créer les murs (en fonction des planches versos 1, 2, 3 et 4 du document)
+        //CRÉER ET AFFICHER LES MURS (en fonction des planches versos 1, 2, 3 et 4 du document)
         //Murs horizontaux
         Image horizontalWallUpImage = new Image("HorizontalWallUp.png", CELL_SIZE, CELL_SIZE, false, true);
         Image horizontalWallDownImage = new Image("HorizontalWallDown.png", CELL_SIZE, CELL_SIZE, false, true);
@@ -73,7 +73,7 @@ public class MainController {
             }
         }
 
-        //Créer et placer les objectifs
+        //CRÉER ET PLACER LES OBJECTIFS: ils apparaissent un à un de manière aléatoire
         Image redGoalImage = new Image("RedGoal.png", CELL_SIZE, CELL_SIZE, false, true);
         Image greenGoalImage = new Image("GreenGoal.png", CELL_SIZE, CELL_SIZE, false, true);
         Image blueGoalImage = new Image("BlueGoal.png", CELL_SIZE, CELL_SIZE, false, true);
@@ -102,7 +102,7 @@ public class MainController {
             }
         }
 
-        //Créer et placer les robots de manière aléatoire sur le plateau
+        //CRÉER ET PLACER LES ROBOTS: leur position initiale est aléatoire
         Image redRobotImage = new Image("RedRobot.png", CELL_SIZE, CELL_SIZE, false, true);
         Image greenRobotImage = new Image("GreenRobot.png", CELL_SIZE, CELL_SIZE, false, true);
         Image blueRobotImage = new Image("BlueRobot.png", CELL_SIZE, CELL_SIZE, false, true);
