@@ -21,8 +21,8 @@ public class Goal {
         listOfGoals.add(new Goal(1, 10, "RED"));
         listOfGoals.add(new Goal(2, 5, "GREEN"));
         listOfGoals.add(new Goal(2, 6, "YELLOW"));
-        listOfGoals.add(new Goal(2, 10, "BLUE"));
-        listOfGoals.add(new Goal(3, 10, "GREEN"));
+        listOfGoals.add(new Goal(2, 12, "BLUE"));
+        listOfGoals.add(new Goal(3, 12, "GREEN"));
         listOfGoals.add(new Goal(5, 1, "RED"));
         listOfGoals.add(new Goal(6, 13, "YELLOW"));
         listOfGoals.add(new Goal(7, 4, "BLUE"));

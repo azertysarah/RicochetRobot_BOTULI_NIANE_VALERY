@@ -2,6 +2,7 @@ package com;
 
 import com.isep.Goal;
 import com.isep.HorizontalWall;
+import com.isep.Robot;
 import com.isep.VerticalWall;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -102,5 +103,33 @@ public class MainController {
         }
 
         //Créer et placer les robots de manière aléatoire sur le plateau
+        Image redRobotImage = new Image("RedRobot.png", CELL_SIZE, CELL_SIZE, false, true);
+        Image greenRobotImage = new Image("GreenRobot.png", CELL_SIZE, CELL_SIZE, false, true);
+        Image blueRobotImage = new Image("BlueRobot.png", CELL_SIZE, CELL_SIZE, false, true);
+        Image yellowRobotImage = new Image("YellowRobot.png", CELL_SIZE, CELL_SIZE, false, true);
+
+        List<Robot> listOfRobots = Robot.createRobots();
+
+        for (Robot robot : listOfRobots){
+            ImageView redRobotImageView = new ImageView(redRobotImage);
+            ImageView greenRobotImageView = new ImageView(greenRobotImage);
+            ImageView blueRobotImageView = new ImageView(blueRobotImage);
+            ImageView yellowRobotImageView = new ImageView(yellowRobotImage);
+            switch(robot.getColor()){
+                case "RED":
+                    gridBoard.add(redRobotImageView,robot.getRow(),robot.getColumn());
+                    break;
+                case "GREEN":
+                    gridBoard.add(greenRobotImageView,robot.getRow(),robot.getColumn());
+                    break;
+                case "BLUE":
+                    gridBoard.add(blueRobotImageView,robot.getRow(),robot.getColumn());
+                    break;
+                case "YELLOW":
+                    gridBoard.add(yellowRobotImageView,robot.getRow(),robot.getColumn());
+                    break;
+            }
+        }
+
     }
 }
