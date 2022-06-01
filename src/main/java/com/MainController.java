@@ -6,11 +6,14 @@ import com.isep.Robot;
 import com.isep.VerticalWall;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 
 import java.util.List;
+import java.util.Random;
 
 public class MainController {
     public final int CELL_SIZE = 40;
@@ -74,47 +77,61 @@ public class MainController {
         }
 
         //CRÉER ET PLACER LES OBJECTIFS: ils apparaissent un à un de manière aléatoire
+        //Création Image
         Image redGoalImage = new Image("RedGoal.png", CELL_SIZE, CELL_SIZE, false, true);
         Image greenGoalImage = new Image("GreenGoal.png", CELL_SIZE, CELL_SIZE, false, true);
         Image blueGoalImage = new Image("BlueGoal.png", CELL_SIZE, CELL_SIZE, false, true);
         Image yellowGoalImage = new Image("YellowGoal.png", CELL_SIZE, CELL_SIZE, false, true);
 
+        //Création ImageView
+        ImageView redGoalImageView = new ImageView(redGoalImage);
+        ImageView greenGoalImageView = new ImageView(greenGoalImage);
+        ImageView blueGoalImageView = new ImageView(blueGoalImage);
+        ImageView yellowGoalImageView = new ImageView(yellowGoalImage);
+
+        //Création liste d'objectif
         List<Goal> listOfGoals = Goal.createGoals();
 
-        for (Goal goal : listOfGoals){
-            ImageView redGoalImageView = new ImageView(redGoalImage);
-            ImageView greenGoalImageView = new ImageView(greenGoalImage);
-            ImageView blueGoalImageView = new ImageView(blueGoalImage);
-            ImageView yellowGoalImageView = new ImageView(yellowGoalImage);
-            switch(goal.getColor()){
-                case "RED":
-                    gridBoard.add(redGoalImageView,goal.getRow(),goal.getColumn());
-                    break;
-                case "GREEN":
-                    gridBoard.add(greenGoalImageView,goal.getRow(),goal.getColumn());
-                    break;
-                case "BLUE":
-                    gridBoard.add(blueGoalImageView,goal.getRow(),goal.getColumn());
-                    break;
-                case "YELLOW":
-                    gridBoard.add(yellowGoalImageView,goal.getRow(),goal.getColumn());
-                    break;
-            }
+        //Afficher au hasard un des objectifs de la liste
+        Random random = new Random();
+        int randomGoal = random.nextInt(listOfGoals.size());
+        switch(listOfGoals.get(randomGoal).getColor()){
+            case "RED":
+                gridBoard.add(redGoalImageView,listOfGoals.get(randomGoal).getRow(),listOfGoals.get(randomGoal).getColumn());
+                listOfGoals.remove(listOfGoals.get(randomGoal));
+                break;
+            case "GREEN":
+                gridBoard.add(greenGoalImageView,listOfGoals.get(randomGoal).getRow(),listOfGoals.get(randomGoal).getColumn());
+                listOfGoals.remove(listOfGoals.get(randomGoal));
+                break;
+            case "BLUE":
+                gridBoard.add(blueGoalImageView,listOfGoals.get(randomGoal).getRow(),listOfGoals.get(randomGoal).getColumn());
+                listOfGoals.remove(listOfGoals.get(randomGoal));
+                break;
+            case "YELLOW":
+                gridBoard.add(yellowGoalImageView,listOfGoals.get(randomGoal).getRow(),listOfGoals.get(randomGoal).getColumn());
+                listOfGoals.remove(listOfGoals.get(randomGoal));
+                break;
         }
 
         //CRÉER ET PLACER LES ROBOTS: leur position initiale est aléatoire
+        //Création Image
         Image redRobotImage = new Image("RedRobot.png", CELL_SIZE, CELL_SIZE, false, true);
         Image greenRobotImage = new Image("GreenRobot.png", CELL_SIZE, CELL_SIZE, false, true);
         Image blueRobotImage = new Image("BlueRobot.png", CELL_SIZE, CELL_SIZE, false, true);
         Image yellowRobotImage = new Image("YellowRobot.png", CELL_SIZE, CELL_SIZE, false, true);
 
+        //Création liste de robots
         List<Robot> listOfRobots = Robot.createRobots();
 
+        //Afficher tous les robots de la liste
         for (Robot robot : listOfRobots){
+            //Création ImageView
             ImageView redRobotImageView = new ImageView(redRobotImage);
             ImageView greenRobotImageView = new ImageView(greenRobotImage);
             ImageView blueRobotImageView = new ImageView(blueRobotImage);
             ImageView yellowRobotImageView = new ImageView(yellowRobotImage);
+
             switch(robot.getColor()){
                 case "RED":
                     gridBoard.add(redRobotImageView,robot.getRow(),robot.getColumn());
@@ -130,6 +147,32 @@ public class MainController {
                     break;
             }
         }
-
     }
+
+
+    @FXML
+    Button confirmBtn;
+
+    @FXML
+    Label errorLabel;
+
+    @FXML
+    TextField movesNumberPlayerField;
+
+    public void confirmBtnAction() throws Exception{
+        //Message d'erreur en cas de mauvaise saisie de l'utilisateur
+        try{
+            int movesNumberPlayer = Integer.parseInt(movesNumberPlayerField.getText());
+            errorLabel.setText("");
+        }catch (NumberFormatException e){
+            errorLabel.setText("Please enter an integer...");
+        }catch (Exception e){
+            errorLabel.setText("Error");
+        }
+        //Chronomètre 30 secondes
+        //if il catch une erreur -> pas de chrono
+        //sinon go!
+    }
+
+
 }

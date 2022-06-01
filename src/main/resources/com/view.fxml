@@ -55,9 +55,9 @@
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="101.0" minWidth="10.0" prefWidth="76.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="220.0" minWidth="10.0" prefWidth="171.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="106.0" minWidth="0.0" prefWidth="94.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
@@ -74,14 +74,19 @@
                         <Insets right="3.0" top="3.0" />
                      </padding>
                   </Label>
-                  <TextField maxWidth="-Infinity" prefHeight="26.0" prefWidth="105.0" promptText="Enter an integer" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Button fx:id="Moves" mnemonicParsing="false" text="Confirm" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <TextField fx:id="movesNumberPlayerField" maxWidth="-Infinity" prefHeight="26.0" prefWidth="105.0" promptText="Enter an integer" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button fx:id="confirmBtn" mnemonicParsing="false" onAction="#confirmBtnAction" text="Confirm" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                   <Label text="IA's moves:   " GridPane.rowIndex="2">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
                   <Label text="Blabla" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="errorLabel" textFill="#be0505" GridPane.columnIndex="3" GridPane.rowIndex="1">
                      <font>
                         <Font size="14.0" />
                      </font>
