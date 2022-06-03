@@ -76,17 +76,52 @@
                   </Label>
                   <TextField fx:id="movesNumberPlayerField" maxWidth="-Infinity" prefHeight="26.0" prefWidth="105.0" promptText="Enter an integer" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <Button fx:id="confirmBtn" mnemonicParsing="false" onAction="#confirmBtnAction" text="Confirm" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <Label text="IA's moves:   " GridPane.rowIndex="2">
+                  <Label text="AI's moves:   " GridPane.rowIndex="2">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label text="Blabla" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Label fx:id="aiMovesLabel" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
                   <Label fx:id="errorLabel" textFill="#be0505" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Your points:" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label fx:id="timerLabel" GridPane.columnIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="3.0" />
+                     </padding></Label>
+                  <Label text="AI's points: " GridPane.columnIndex="4" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label fx:id="playerPointsLabel" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="aiPointsLabel" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Current goal: " GridPane.columnIndex="4">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="currentGoalLabel" GridPane.columnIndex="5">
                      <font>
                         <Font size="14.0" />
                      </font>
