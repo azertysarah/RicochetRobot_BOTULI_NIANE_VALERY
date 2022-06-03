@@ -231,7 +231,7 @@ public class MainController {
             //Comparer les nombres de mouvements du joueur et de l'IA, celui qui détient le score le plus bas commence
             //Si l'IA commence
 
-            //Messages d'erreur en cas de mauvaise saisie du nombre de mouvements de la part de l'utilisateur
+        //Messages d'erreur en cas de mauvaise saisie du nombre de mouvements de la part de l'utilisateur
         } catch (NumberFormatException e) {
             errorLabel.setText("Please enter an integer");
         }catch (Exception e){
@@ -245,7 +245,7 @@ public class MainController {
     }
 
 
-    //Scottie
+    //Scottie MOUVEMENT ROBOTS
     //@FXML
     //Scene scene;
 
